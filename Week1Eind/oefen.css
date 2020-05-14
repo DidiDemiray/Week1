@@ -1,0 +1,207 @@
+
+/* Menu en hover */
+.dropbtn {
+    width: 40px;
+    height: 40px;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+  
+  /*
+  menu inklikken
+  */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    
+  }
+ .dropdown-content-2{
+    display: none;
+ } 
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    z-index: 1;
+   
+  }
+  
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+.dropdown-content a {background-color: black;}
+  
+.dropdown:hover .dropdown-content {display: block;}
+  
+.dropdown:hover .dropbtn {background-color: grey;}
+
+/* In menu ul en li (button) */
+
+#dropdowncontent{
+    list-style-type:none;
+    margin: 1;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+}
+
+li{
+    display: inline;
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#menu:hover{
+    background-color: lightslategray;
+}
+
+#menurood:hover{
+    background-color: darkred;
+}
+
+#menublauw:hover{
+    background-color: darkblue;
+}
+
+#menugroen:hover{
+    background-color: darkgreen;
+}
+
+#menugeel:hover{
+    background-color: rgb(163, 163, 44);
+}
+
+#menupaars:hover{
+    background-color: rgb(104, 10, 104);
+}
+
+li{
+    color: white;
+}
+
+.icon{
+    margin: -200%;
+    color: black;
+    
+}
+
+/* knoppen kleuren */
+#witknop{
+    background-color: white;
+}
+
+#roodknop{
+    background-color: red;
+    color: white;
+}
+
+#blauwknop{
+    background-color: blue;
+    color: white;
+}
+
+#groenknop{
+    background-color: green;
+    color: white;
+}
+
+#geelknop{
+    background-color: yellow;
+}
+
+#paarsknop{
+    background-color: purple;
+    color: white;
+    
+}
+
+/* Achtergrondkleur li*/
+#menu{
+    background-color: white;
+    width: 200px;
+    
+}
+
+#menurood{
+    background-color: red;
+    width: 200px;
+}
+
+#menublauw{
+    background-color: blue;
+    width: 200px;
+}
+
+#menugroen{
+    background-color: green;
+    width: 200px;
+}
+
+#menugeel{
+    background-color: yellow;
+    width: 200px;
+}
+
+#menupaars{
+    background-color: purple;
+    width: 200px;
+}
+
+/* achtergronden pagina */
+
+/* .achtergrondwit{
+    background-color: white;
+} */
+
+.achtergrondwit{
+    background-color: white;
+}
+
+.achtergrondrood{
+    background-color: red;
+}
+
+.achtergrondblauw{
+    background-color: blue;
+}
+
+.achtergrondgroen{
+    background-color: green;
+}
+
+.achtergrondgeel{
+    background-color: yellow;
+}
+
+.achtergrondpaars{
+    background-color: purple;
+}
+
+
+/* .dropdown-content-hidden {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    visibility: hidden;
+    z-index: 1;
+  } */
+
+  p{
+      font-size: 4em;
+      font-family: fantasy;
+  }
