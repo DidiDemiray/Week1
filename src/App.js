@@ -1,72 +1,110 @@
 import React, {Component} from 'react';
 import './App.css';
-import SongList from './SongList';
+import Chart from './components/Chart'; 
+import EvelynChart from './components/EvelynChart';
+import ArankaChart from './components/ArankaChart';
+import FlorisChart from './components/FlorisChart';
+import HectorChart from './components/HectorChart';
+import MartinaChart from './components/MartinaChart';
+import MauritsChart from './components/MauritsChart';
+import RahimaChart from './components/RahimaChart';
+import SandraChart from './components/SandraChart';
+import WietskeChart from './components/WietskeChart';
+import StormChart from './components/StormChart';
+import Nav from './components/Nav';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
-class SongOverview extends Component {
-  
-  constructor() {
-    super()
-    this.state = 
-    { songs:[
-        title= '',
-        artist= '',
-        genre= '',
-        rating= '',] 
+
+class App extends Component {
+  constructor(){
+    super();
+    this.state ={
+      chartData:{}
     }
-    this.handleChange = this.handleChange.bind(this);
-    this.addSong = this.addSong.bind(this);
   }
 
-  handleChange(event){
+  componentWillMount(){
+    this.getChartData();
+  }
+
+  getChartData(){
+    //Data ophalen, normaal uit API
     this.setState({
-      [event.target.name] : event.target.value
-    })
-  }
+      chartData:{
+        labels: ['SCRUM','W1D1-1','W1D2-1','W1D2-2',' W1D2-3','W1D2-4','W1D2-5','W1D3-1',
+                  'W1D3-2','W1D3-4','W1D3-5',' W1D3 - Project - Guess-the-number','W1D4-1','W1D4 - Project - Kleurentoggle',
+                  'W1D5 - Project - Galgje','W2D1-1','W2D1-2','W2D2-1','W2D2-2','W2D2-3','W2D3-1','W2D3-2',
+                  'W2D3-3','W2D4-1','W2D4-2','W2D4-3','W2D5 - Project - Filmzoeker','W3D1-1','W3D1-2','W3D1-3',
+                  'W3D1-4','W3D2-1','W3D2-2','W3D2-3','W3D3-1','W3D3-2','W3D3-3','W3D3-4','W3D4-1','W3D4-2','W3D5 - Project - Todo-List',
+                  'W4D2-1','W4D2-2','W4D2-3','W4D2-4','W4D3-1','W4D3-2','W4D3-3','W4D3-4','W4D3-5','W4D3 - Project - Next-Level CSS',
+                  'W5D4-1','W5D5 - Project - Lil_Playlist','W6D1-1','W6D2-1'],
+        datasets: [
+            {
+                label:'LEUK',
+                data:[
+                  2, 3, 3, 2.7, 2.5, 2.4, 3, 2.9, 2.5, 2, 2.6, 2.7, 2.8, 2.9, 3.1, 2.8, 2.4, 2.6, 2.5, 2.5, 2, 
+                  2.6, 2.3, 3.4, 3, 2.5, 2.1, 2.3, 3.1, 2.9, 2.9, 3, 2.9, 2.6, 3, 2.4, 3.1, 2.4, 3.4, 2.7, 3.1,
+                  2.7, 2.8, 3, 3, 2.5, 3.1, 2.7, 2.6, 2.5, 2.8, 2.8, 1.9, 2.6, 2.5, 2.8
+                    ],
+                fill: false,
+                backgroundColor:'blue',
+                borderColor:'blue'
+            },
+            {
+                label:'MOEILIJK',
+                data:[
+                  1.9, 3.1, 2, 1.6, 1.9, 2.6, 2.7, 1.9, 2.2, 2.4, 2.7, 2.5, 2.9, 2.5, 3, 2.2, 3.3, 2.9, 2.3,
+                  2.8, 2.4, 2.4, 2.8, 1.9, 3.1, 2.6, 2.9, 2.4, 2.2, 2.2, 2.2, 1.8, 2.1, 2.5, 2.4, 2.9, 2.3, 2.9,
+                  2.6, 2.2, 2.2, 2.1, 2.3, 2.4, 2.4, 2.2, 1.9, 2.1, 2.1, 2.5, 2.7, 1.9, 2.7, 2.3, 1.9, 3
+                    ],
+                fill: false,
+                backgroundColor:'yellow',
+                borderColor:'yellow'
 
-  addSong(song) {
-    this.setState(prevState =>{
-      return{
-        
-        prevState: songs.concat(song),
-      };
+            }
+        ]
+    }
     });
   }
 
-  render() {
-    return (
-      <div className='App'>
-   
-        <br/>
-        <form>
-          <input type='text' value={this.state.title} name='title' placeholder='Title' onChange={this.handleChange} />
-          <input type='text' value={this.state.artist} name='artist' placeholder='Artist' onChange={this.handleChange} />
-          <input type='text' value={this.state.genre} name='genre' placeholder='Genre' onChange={this.handleChange} />
-          <input type='text' value={this.state.rating} name='rating' placeholder='Rating' onChange={this.handleChange} />
-          <button >submit</button>
-        </form>
-        
-        
-        
-        <p><strong>Title:</strong> {this.state.title}</p>
-        <p><strong>Artist:</strong> {this.state.artist}</p>
-        <p><strong>Genre:</strong> {this.state.genre}</p>
-        <p><strong>Rating:</strong> {this.state.rating}</p>
+  render (){
+    return(
+      <div className="App">
+      <header className="App-header">
+        <p>
+          STUDENT DASHBOARD
+        </p>
+      
+      </header>
+      
+      <body className='App-body'>
+        <Router>
+            <Nav />
+          <Switch>
+            <Route path='/Evelyn' component={EvelynChart}/>
+            <Route path='/Aranka' component={ArankaChart}/>
+            <Route path='/Floris' component={FlorisChart}/>
+            <Route path='/Hector' component={HectorChart}/>
+            <Route path='/Martina' component={MartinaChart}/>
+            <Route path='/Maurits' component={MauritsChart}/>
+            <Route path='/Rahima' component={RahimaChart}/>
+            <Route path='/Sandra' component={SandraChart}/>
+            <Route path='/Wietske' component={WietskeChart}/>
+            <Route path='/Storm' component={StormChart}/>
+          </Switch>
+        </Router>
 
+        <Chart chartData={this.state.chartData} />
+      
+      </body>
 
-        <table>
-		        <tr >  
-			        <th className="song-row__item">Song</th>
-			        <th className="song-row__item">Artist</th>
-			        <th className="song-row__item">Genre</th>
-			        <th className="song-row__item">Rating</th>
-			      </tr>
-				</table>
-
-        <ul className='Songlist'></ul>
-      <SongList />
-      </div>
-    );
-  }
+      <footer className='App-footer'>
+        <p><strong>Didi Demiray</strong></p>
+      </footer>
+    </div>
+    )
+    
+  };
 }
 
-export default SongOverview;
+export default App;
